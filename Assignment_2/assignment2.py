@@ -6,24 +6,56 @@ import re
 
 def write_countries_capitals_to_file(filename):
 
-    def check_name():
-        name_without_txt = filename[:-4]
-        if len(name_without_txt) < 1 or len(name_without_txt) > 8:
-            return False
-        if not name_without_txt.isalnum():
-            return False
-        if not filename.endswith(".txt"):
-            return False
-        return True
+    filename_check = re.compile(r"^[a-zA-Z\d]{1,8}\.txt$")
+    while not re.match(filename_check, filename):
+        filename = input("Enter filename (1-8 letters or number, end with .txt): ")
 
-    while not check_name():
-        filename = input("Enter file name\n(Must contain only 1-8 letters/number)\n: ")
-
-    with open(filename, "w") as file:
-        for country, capital in countries_capitals_dictionary.items():
-            file.write(f"The capital of {country} is {capital}.\n")
-        file.close()
+    file = open(filename, "w")
+    for country, capital in countries_capitals_dictionary.items():
+        file.write(f"The capital of {country} is {capital}.\n")
+    file.close()
 
 
 def save_capitals():
-    pass
+
+    file = open("vowel_vowel_vowel.txt", "w")
+    for capital in capitals:
+        if re.search(r"[aeiouAEIOU]{3}", capital):
+            file.write(f"{capital}\n")
+    file.close()
+
+    file = open("cons_cons_cons.txt", "w")
+    for capital in capitals:
+        if re.search(r"[^aeiouAEIOU\s]{3}", capital):
+            file.write(f"{capital}\n")
+    file.close()
+
+    file = open("i_before_e.txt", "w")
+    for capital in capitals:
+        if re.search(r"[iI].*[eE]", capital):
+            file.write(f"{capital}\n")
+    file.close()
+
+    file = open("a_a.txt", "w")
+    for capital in capitals:
+        if re.search(r"^[aA].*[aA]$", capital):
+            file.write(f"{capital}\n")
+    file.close()
+
+    file = open("end_with_vowel.txt", "w")
+    for capital in capitals:
+        if re.search(r"[aeiouAEIOU]$", capital):
+            file.write(f"{capital}\n")
+    file.close()
+
+    file = open("weird.txt", "w")
+    for capital in capitals:
+        if re.search(r"[\sxX]", capital):
+            file.write(f"{capital}\n")
+    file.close()
+
+    file = open("not_start.txt", "w")
+    for capital in capitals:
+        if re.search(r"^[^a-eA-Ep-sP-S]", capital):
+            file.write(f"{capital}\n")
+    file.close()
