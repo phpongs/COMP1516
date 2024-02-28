@@ -1,6 +1,6 @@
 # author: Pongsatorn Phimnualsri
 
-from data import countries_and_capitals, countries, capitals, countries_capitals_dictionary
+from data import capitals, countries_capitals_dictionary
 import re
 
 
