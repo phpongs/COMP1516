@@ -5,6 +5,7 @@ Buenos Aires
 Porto Novo
 Bandar Seri Begawan
 Phnom Penh
+N'Djamena
 San Jose
 Santo Domingo
 San Salvador
@@ -26,8 +27,10 @@ Port Moresby
 San Marino
 Sao Tome
 Pretoria, Bloemfontein, Cape Town
+Nuku'alofa
 Port of Spain
 Abu Dhabi
 Washington D.C.
 Port Vila
 Vatican City
+Sana'a
