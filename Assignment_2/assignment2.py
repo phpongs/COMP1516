@@ -6,14 +6,15 @@ import re
 
 def write_countries_capitals_to_file(filename):
 
-    filename_check = re.compile(r"^[a-zA-Z\d]{1,8}\.txt$")
+    filename_check = r"^[a-zA-Z\d]{1,8}\.txt$"
     while not re.match(filename_check, filename):
         filename = input("Enter filename (1-8 letters or number, end with .txt): ")
 
-    file = open(filename, "w")
-    for country, capital in countries_capitals_dictionary.items():
-        file.write(f"The capital of {country} is {capital}.\n")
-    file.close()
+    else:
+        file = open(filename, "w")
+        for country, capital in countries_capitals_dictionary.items():
+            file.write(f"The capital of {country} is {capital}.\n")
+        file.close()
 
 
 def save_capitals():
@@ -56,6 +57,6 @@ def save_capitals():
 
     file = open("not_start.txt", "w")
     for capital in capitals:
-        if re.search(r"^[^a-eA-Ep-sP-S]", capital):
+        if not re.search(r"^[a-eA-Ep-sP-S]", capital):
             file.write(f"{capital}\n")
     file.close()
