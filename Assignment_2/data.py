@@ -126,14 +126,3 @@ capitals = ('Kabul', 'Tirana (Tirane)', 'Algiers', 'Andorra la Vella', 'Luanda',
 
 
 countries_capitals_dictionary = dict(zip(countries, capitals))
-
-
-def main():
-    """
-    main function of the program
-    """
-    print("I should not be called")
-
-
-if __name__ == '__main__':
-    main()
